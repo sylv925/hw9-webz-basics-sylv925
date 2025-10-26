@@ -129,14 +129,14 @@ jobs:
             #      echo "</body></html>" >> ./dist/index.html
             # Deploy
             - name: Setup Pages
-              uses: actions/configure-pages@v4
+              uses: actions/configure-pages@v5
               if: ${{ !cancelled() }}
             - name: Upload artifact
-              uses: actions/upload-pages-artifact@v2
+              uses: actions/upload-pages-artifact@v3
               if: ${{ !cancelled() }}
               with:
                   path: "dist/"
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v2
+              uses: actions/deploy-pages@v3
               if: ${{ !cancelled() }}
